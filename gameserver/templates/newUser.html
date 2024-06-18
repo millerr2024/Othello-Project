@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/newUser.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Create Account</title>
+</head>
+
+<body>
+    <div class = everything-div>
+        <div class = othello-div>
+            <h1>othello</h1>
+        </div>
+        <div class="div-container">
+            <h1>sign up</h1>
+                <div class = box-div>
+                    <form action="" id="newUserForm">
+                        <div id = username-box class = username-div>
+                            <label for="username">type your new username:</label>
+                            <br>
+                            <input type="text" id="username" name="username" />
+                        </div>
+                        <div id = pass-box class = pass-div>
+                            <label for="pass">type a secure password:</label>
+                            <br>
+                            <input type="password" id="pass" name="password" required />
+                        </div>
+                        <div id = button class = button-div>
+                            <button type="submit">create account</button>
+                        </div>
+                    </form>
+                    <div id = error class = error-div>
+                        <p>username already in use</p>
+                    </div>
+                    <div id = login class = login-div>
+                        <p>already have an account? <a href="/">log in</a></p>
+                    </div>
+                </div>
+        </div>
+    </div>
+<script type="module" src="/static/newUser.js"></script>
+</body>
+</html>

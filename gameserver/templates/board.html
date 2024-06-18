@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/static/board.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,700,0,0" />
+    <title>Othello</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="pop-up-container">
+        <div class="pop-up-div">
+          <div class="choose-your-opponent-container">
+            <span></span>
+            <div class="pop-up-sub-div"> 
+              <h1>choose your opponent</h1>
+              <button class="playAgainstAIBtn">AI</button>
+              <button class="multiplayerBtn">multiplayer</button>
+            </div>
+          </div>
+          <div class="choose-ai-container">
+            <div class="back-arrow-div">
+              <span class="material-symbols-outlined back-arrow choose-ai-back-arrow">arrow_back_ios</span>
+            </div>
+            <div class="pop-up-sub-div">
+              <h1>choose difficulty</h1>
+              <button class="easyAI">easy</button>
+              <button class="mediumAI">medium</button>
+            </div>
+          </div>
+          <div class="multiplayer-container">
+            <div class="back-arrow-div">
+              <span class="material-symbols-outlined back-arrow multiplayer-back-arrow">arrow_back_ios</span>
+            </div>
+            <div class="pop-up-sub-div">
+              <h1>multiplayer</h1>
+              <button class="createARoomBtn">create a room</button>
+              <button class="joinARoomBtn">join a room</button>
+            </div>
+          </div>
+          <div class="create-a-room-container">
+            <div class="back-arrow-div">
+              <span class="material-symbols-outlined back-arrow create-room-back-arrow">arrow_back_ios</span>
+            </div>
+            <div class="pop-up-sub-div"> 
+              <h1>invite a friend!</h1>
+              <h2>game code: <span class="game-code"></span> </h2>
+              <button class="copy-code">copy code</button>
+            </div>
+          </div>
+          <div class="join-a-room-container">
+            <div class="back-arrow-div">
+              <span class="material-symbols-outlined back-arrow join-room-back-arrow">arrow_back_ios</span>
+            </div>
+            <div class="pop-up-sub-div"> 
+              <h1>enter a game code!</h1>
+              <input class="code-text-input" type="text"></input><button class="joinGame">join game</button>
+            </div>
+          </div>
+          <div class="game-over">
+            <h1 class="game-over-text">you won!</h1>
+            <button class="play-again">play again</button>
+          </div>
+        </div>
+        <div class="no-legal-moves-div">
+          <div>no legal moves</div>
+          <button class="pass">pass</button>
+        </div>
+        <div class="no-legal-moves-opponent-div">
+          <div>your opponent just passed</div>
+          <button class="continue">continue</button>
+        </div>
+        </div>
+        <div class="instructions-popup-container" id="instructionsPopup">
+          <div class="instructions-popup">
+            <button class="close-btn" id="closeInstructionsPopup">&times;</button>
+            <h1>How to Play Othello</h1>
+            <h5> Othello is a two player game. Players take turns placing their discs on the board. </h5>
+            <h5> The goal of Othello is to have the most discs of your color on the board at the end of the game.</h5>
+            <h5> A legal move is any placement that sandwiches at least one of your opponent's discs vertically, horizontally, or diagonally between the disc you're placing and an existing disc of your color.</h5>
+            <h5> After you make your move, any opponent discs that become sandwiched between your newly placed disc and an existing disc of yours will be flipped to your color.</h5>
+            <h5> You must place a disc if there exists a legal move. If you have no legal moves, the game will notify you and you will pass your turn. The same can happen for your opponent.</h5>
+            <h5> The game ends when there are no more legal moves for either player or when the board is full. </h5>
+            <h5> The winner is the player with the most discs of their color on the board at the end of the game.</h5>
+            
+          </div>
+        </div>
+        <header>
+          <h1 class="logo">othello</h1>
+          <div class="nav-bar">
+            <a class="instructions">instructions</a>
+            <a class="play">play</a>
+            <a class="stats">stats</a>
+            <a class="log-out">log out</a>
+          </div>
+        </header>
+      <div class="body-container">
+        <div class = "emojis-div">
+          <a class = "emojiButtonHappy">
+            <img src="/static/images/happy.png" class = "emojiButton"/>
+          </a>
+          <a class = "emojiButtonSad">
+            <img src="/static/images/sad.png" class = "emojiButton"/>
+          </a>
+          <a class = "emojiButtonMad">
+            <img src="/static/images/mad.png" class = "emojiButton"/>
+          </a>
+          <a class = "emojiButtonSleepy">
+            <img src="/static/images/sleepy.png" class = "emojiButton"/>
+          </a>
+        </div>
+        <div>
+          <div class = "username-container top-username">
+            <p class="opponent-id">USERNAME</p>
+            <img src="/static/images/happy.png" class = "emojiOp" id = "happyEmojiOp"></img>
+            <img src="/static/images/sad.png" class = "emojiOp" id = "sadEmojiOp"></img>
+            <img src="/static/images/mad.png" class = "emojiOp" id = "madEmojiOp"></img>
+            <img src="/static/images/sleepy.png" class = "emojiOp" id = "sleepyEmojiOp"></img>
+          </div>
+          <div class="board-container">
+            <div class="board-row">
+              <div class="board-square p00">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p01">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p02">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p03">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p04">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p05">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p06">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p07">
+                <div class="piece"></div>
+              </div>
+            </div>
+            <div class="board-row">
+              <div class="board-square p10">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p11">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p12">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p13">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p14">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p15">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p16">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p17">
+                <div class="piece"></div>
+              </div>
+            </div>
+            <div class="board-row">
+              <div class="board-square p20">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p21">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p22">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p23">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p24">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p25">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p26">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p27">
+                <div class="piece"></div>
+              </div>
+            </div>
+            <div class="board-row">
+              <div class="board-square p30">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p31">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p32">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p33">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p34">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p35">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p36">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p37">
+                <div class="piece"></div>
+              </div>
+            </div>
+            <div class="board-row">
+              <div class="board-square p40">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p41">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p42">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p43">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p44">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p45">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p46">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p47">
+                <div class="piece"></div>
+              </div>
+            </div>
+            <div class="board-row">
+              <div class="board-square p50">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p51">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p52">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p53">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p54">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p55">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p56">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p57">
+                <div class="piece"></div>
+              </div>
+            </div>
+            <div class="board-row">
+              <div class="board-square p60">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p61">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p62">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p63">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p64">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p65">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p66">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p67">
+                <div class="piece"></div>
+              </div>
+            </div>
+            <div class="board-row">
+              <div class="board-square p70">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p71">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p72">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p73">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p74">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p75">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p76">
+                <div class="piece"></div>
+              </div>
+              <div class="board-square p77">
+                <div class="piece"></div>
+              </div>
+            </div>
+          </div>
+          <div class = "username-container">
+            <p class="player-id">USERNAME</p>
+            <img src="/static/images/happy.png" class = "emojiPlayer" id = "happyEmojiPlayer"></img>
+            <img src="/static/images/sad.png" class = "emojiPlayer" id = "sadEmojiPlayer"></img>
+            <img src="/static/images/mad.png" class = "emojiPlayer" id = "madEmojiPlayer"></img>
+            <img src="/static/images/sleepy.png" class = "emojiPlayer" id = "sleepyEmojiPlayer"></img>
+          </div>
+        </div>
+        <div class="board-stats-div">
+          <div class="board-stats-sub-div">
+            <div class="opponent-piece-stats"></div>
+            <p class="num-opponent-pieces">0</p>
+          </div>
+          <div class="board-stats-sub-div">
+            <div class="player-piece-stats"></div>
+            <p class="num-player-pieces">0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/static/board.js"></script>
+  </body>
+</html >

@@ -1,0 +1,172 @@
+body {
+    background-color: #4b4f55;
+    margin: 0px;
+  }
+  
+  .box-div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #616161;
+      border-radius: 30px;
+      height: 330px;
+      width: 35%;
+      font-family: "Roboto Mono";
+      margin: 0px 0;
+      margin-top: 0px 0;
+      margin-bottom: 0px 0;
+  }
+  
+  .pass-div
+  {
+      margin-bottom:22px;
+      margin-top: 10px;
+  }
+
+  .pass-style
+  {
+    margin-bottom:15px;
+    margin-top: 6px;
+  }
+  
+  .button-div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 12px 0;
+      padding-top: 0px;
+      padding-bottom: 5px;
+  }
+
+  .button-style
+  {
+    padding-bottom: 5px;
+  }
+  
+  input[type=text] {
+      width: 23rem;
+      height: 1.9rem;
+      padding: 0.3rem;
+      margin: 8px 0;
+      margin-top: 0.2rem;
+      box-sizing: border-box;
+      background-color: #D9D9D9;
+    }
+    
+  input[type=password] {
+      width: 23rem;
+      height: 1.9rem;
+      padding: 0.3rem;
+      margin: 8px 0;
+      margin-top: 0.2rem;
+      box-sizing: border-box;
+      background-color: #D9D9D9;
+    }
+  
+  .box-div button{
+      width: 12rem;
+      height: 2.4rem;
+      padding: 0.3rem;
+      background-color:#E2B714;;
+      transition: .4s;
+      border: none;
+      border-radius: 6px;
+      font-family: "Roboto Mono";
+      font-size: 0.9rem;
+      margin: 0px 0;
+      margin-top: 0px 0;
+      margin-bottom: 0px 0;
+  }
+
+  
+  .error-div{
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      font-family: "Roboto Mono";
+      color: #FFFFFF;
+      margin: 0px 0;
+      margin-top: 0px 0;
+      margin-bottom: 0px 0;
+  }
+  
+  .div-container{
+      flex-direction: column;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: #FFFFFF;
+      font-family: "Roboto Mono";
+      font-size: 25px;
+      margin: 0px 0;
+      margin-top: 0px 0;
+      margin-bottom: 0px 0;
+  }
+  
+  .everything-div
+  {
+      height: 100vh;
+      width: 100%;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+}
+
+.error-div
+{
+    display: none;
+}
+
+.error-style
+{
+    display: flex;
+    font-weight: bold;
+}
+
+.username-div
+{
+    padding-top: 30px;
+}
+
+.username-style
+{
+    padding-top: 20px;
+}
+
+.login-div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin: 3px 0;
+    padding-top: 10px;
+    font-family: "Roboto Mono";
+}
+
+a:link, a:visited {
+    font-family: "Roboto Mono";
+    color: white;
+}
+
+.othello-div{
+    font-weight: 100;
+    height: 10vh;
+    color: #FFFFFF;
+    font-family: "Lexend Deca";
+    margin: 0;
+    padding-left: 2.5rem;
+    padding-top: 0.02px;
+}
+
+.othello-div h1
+{
+    font-weight: normal;
+    margin-top: 10px;
+}

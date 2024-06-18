@@ -1,0 +1,24 @@
+# Add a service for each of the two AI
+
+services:
+  gameserver:
+    build: ./gameserver
+    ports:
+      # These are the ports we serve the app from. The first number is the port where you access the server
+      # (ie: http://localhost:80) and the second number is the port that the flask app needs to run on
+      # ie: app.run(host = '0.0.0.0', port = 5000).
+      - "80:5000"
+  ai:
+    build: ./ai
+    expose:
+      - "5000"
+    ports:
+      - "7777:5000"
+  database:
+    build: ./database
+    ports:
+      - "5432:5432"
+    restart: on-failure
+
+    volumes:
+      - ./db-storage:/var/lib/postgresql

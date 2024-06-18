@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="div-container">
+    <h1>othello</h1>
+        <div class = box-div>
+            <form action="" id="loginForm">
+            <div>
+            <label for="username">username:</label>
+            <br>
+            <input type="text" id="username" name="username" />
+            </div>
+            <div>
+            <label for="pass">password:</label>
+            <br>
+            <input type="password" id="pass" name="password" required />
+            </div>
+            <div id = button class = button-div>
+                <button type="submit">login</button>
+            </div>
+            <div id = error class = error-div>
+                <p>incorrect username or password</p>
+            </div>
+        </form>
+        <div id = signup class = signup-div>
+        <p>not a user yet? <a href="/newUserPage">sign up</a></p>
+        </div>
+    </div>
+</div>
+<script type="module" src="/static/login.js"></script>
+</body>
+</html>

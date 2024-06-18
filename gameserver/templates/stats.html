@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="static/stats.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,700,0,0" />
+    <title>Othello Stats</title>
+  </head>
+  <body>
+    <div class="background">
+      
+      <header>
+        <h1 class="logo">othello</h1>
+        <div class="nav-bar">
+          <a class="play">play</a>
+          <a class="stats">stats</a>
+          <a class="log-out">log out</a>
+        </div>
+      </header>
+      <br><br>
+      <div class="body-container">
+
+        <div class="div-container">
+          <div class="rounded-box">
+            <div class="name">
+              <p class="player-id" id="player-id" style="margin: 0px;">averydh</p>
+              <p style="margin: 0px; margin-top: 10px; color: rgb(168, 168, 168); font-size: 16px;">
+                joined {{data[0][0]}}
+              </p>
+            </div>
+            <div class="stat-box">
+              <div class="stat-row">
+                <div class="stat">
+                  <div class="stat-text">
+                    games played
+                  </div>
+                  <div class="stat-num" id='games-played'>
+                    16
+                  </div>
+                </div>
+                <div class="stat">
+                  <div class="stat-text">
+                    games won
+                  </div>
+                  <div class="stat-num" id='games-won'>
+                    12
+                  </div>
+                </div>
+                <div class="stat">
+                  <div class="stat-text">
+                    win rate
+                  </div>
+                  <div class="stat-num" id='win-rate'>
+                    75%
+                  </div>
+                </div>
+              </div>
+              <div class="stat-row">
+                <div class="stat">
+                  <div class="stat-text">
+                    avg score diff
+                  </div>
+                  <div class="stat-num" id='score-diff'>
+                    +7.7
+                  </div>
+                </div>
+                <div class="stat">
+                  <div class="stat-text">
+                    score per game
+                  </div>
+                  <div class="stat-num" id='avg-points'>
+                    39
+                  </div>
+                </div>
+                <div class="stat">
+                  <div class="stat-text">
+                    total score
+                  </div>
+                  <div class="stat-num" id='total-score'>
+                    512
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="div-container" id="game-history-container">
+          <div class="gameEntry header">
+            <div class="gameStat result"></div>
+            <div class="gameStat whitePlayer">white player</div>
+            <div class="gameStat score">score</div>
+            <div class="gameStat blackPlayer">black player</div>
+            <div class="gameStat result"></div>
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+    </div>
+    <script type="module" src="static/stats.js"></script>
+  </body>
+</html>

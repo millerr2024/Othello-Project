@@ -1,0 +1,398 @@
+body {
+  margin: 0;
+  font-family: "Roboto Mono";
+}
+
+header {
+  height: 10vh;
+  margin: 0;
+}
+
+header h1 {
+  margin: 0;
+  padding-left: 2.5rem;
+}
+
+header a {
+  margin: 0;
+  padding-right: 2.5rem;
+  color: white;
+}
+
+.body-container {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  justify-items: center;
+  align-items: center;
+}
+
+.board-container {
+  background-color: black;
+  /* border: 2.5px solid black; */
+  width: 65vh;
+  height: 65vh;
+  display: grid;
+  /* grid-template-columns: repeat(8, 12.5%); */
+  grid-template-rows: repeat(8, 12.5%);
+}
+.board-square {
+  height: 100%;
+  width: 100%;
+  background-color: #2ea64c;
+  border: 1px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-row {
+  display: flex;
+}
+.piece {
+  height: 87%;
+  width: 87%;
+  border-radius: 50%;
+}
+
+.W {
+  background-color: white;
+  box-shadow: 2px -2px 3px rgba(0, 0, 0, 0.3);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.B {
+  background-color: black;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.choose-your-opponent-container,
+.multiplayer-container,
+.create-a-room-container,
+.join-a-room-container, .choose-ai-container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 20% 80%;
+  /* flex-direction: column; */
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.game-over{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.game-over h1{
+  margin-top: 5%;
+}
+
+/* This overrides the flex display, so that we can hide and show the element
+in jQuery */
+.multiplayer-container,
+.create-a-room-container,
+.join-a-room-container, .game-over ,.choose-ai-container{
+  display: none;
+}
+
+.pop-up-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #d9d9d9e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.pop-up-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #616161;
+  border-radius: 10px;
+  height: 50%;
+  width: 36%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pop-up-container h1 {
+  font-family: "Roboto Mono";
+  text-align: center;
+}
+
+.pop-up-container button {
+  width: 12rem;
+  height: 2.4rem;
+  padding: 0.6rem;
+  margin-top: 1rem;
+  background-color: #e2b714;
+  transition: 0.4s;
+  border: none;
+  border-radius: 6px;
+  font-family: "Roboto Mono";
+  font-size: 0.9rem;
+}
+
+.pop-up-container button:hover {
+  transform: scale(1.1);
+}
+
+:root {
+  --transition-time: 400ms;
+}
+
+.reverse {
+  transition: all var(--transition-time) cubic-bezier(0.25, 0.1, 0.25, 1),
+    background-color 0s calc(var(--transition-time) * 0.3);
+}
+
+.background {
+  background-color: #4b4f55;
+}
+
+.logo {
+  font-family: "Lexend Deca";
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.board-stats-div {
+  margin-right: 45%;
+}
+
+.opponent-piece-stats {
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 1.2rem;
+}
+
+.legal-move:hover {
+  background-color: #2ea64ccf;
+}
+
+.player-piece-stats {
+  width: 4rem;
+  height: 4rem;
+  background-color: black;
+  border-radius: 50%;
+  margin-right: 1.2rem;
+}
+
+.piece-stats-white {
+  background-color: white;
+}
+
+.piece-stats-black {
+  background-color: black;
+}
+
+.board-stats-sub-div {
+  display: flex;
+  align-items: center;
+}
+
+.board-stats-sub-div p {
+  font-size: 2rem;
+  color: white;
+}
+
+.player-id {
+  margin: 0;
+  color: white;
+  padding-top: 0.3rem;
+}
+
+.opponent-id {
+  color: white;
+  margin: 0;
+  padding-bottom: 0.3rem;
+}
+
+.turn {
+  text-decoration: underline;
+}
+
+.stats-turn {
+  border: 5px #e2b714 solid;
+}
+
+
+.copy-code{
+  width: 12rem;
+  height: 2.4rem;
+  padding: 0.3rem;
+  margin-top: 1rem;
+  background-color: #e2b714;
+  transition: 0.4s;
+  border: none;
+  border-radius: 6px;
+  font-family: "Roboto Mono";
+  font-size: 0.9rem;
+}
+
+.log-out{
+  transition: 0.4s;
+}
+
+.log-out:hover{
+  color:#b8b8b8
+}
+.stats:hover{
+  color:#b8b8b8;
+}
+.instructions:hover{
+  color:#b8b8b8;
+}
+.play{
+  color: #e2b714;
+}
+
+.no-legal-moves-div, .no-legal-moves-opponent-div{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #616161;
+  border-radius: 10px;
+  height: 30%;
+  width: 25%;
+  margin-top: 8vh;
+}
+
+.less-oppacity{
+  background-color: #d9d9d973;
+}
+
+.display-flex{
+  display: flex;
+}
+
+.back-arrow-div{
+  margin-left: 7%;
+  margin-top: 7%;
+}
+
+.back-arrow{
+  color: #e2b714;
+  transition: 0.4s;
+}
+
+.back-arrow:hover{
+  transform: scale(1.3);
+}
+
+.code-text-input{
+  height: 2rem;
+}
+
+.pop-up-sub-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20%;
+}
+
+header a.instructions {
+  color: white;
+}
+
+/* Popup container and close button */
+.instructions-popup-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  display: none; /* Hidden by default */
+}
+
+.instructions-popup {
+  background-color: #ececec;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 33%; /* Set width to 1/3 of the window */
+}
+
+.instructions-popup h1 {
+  margin: 0;
+  font-family: "Roboto Mono";
+  text-align: center; /* Center the header text */
+}
+
+.instructions-popup .content {
+  text-align: left; /* Align the text to the left */
+  margin-top: 20px; /* Add some space between the header and content */
+  font-family: "Roboto Mono";
+}
+
+.instructions-popup .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.username-container{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 1.1rem;
+}
+
+.top-username{
+  margin-bottom: 1.1rem;
+}
+
+.emojiOp{
+  width: 1.7rem;
+  display: none;
+  margin-left: 0.7rem;
+}
+
+.emojiPlayer{
+  width: 1.7rem;
+  display: none;
+  margin-left: 0.7rem;
+}
+
+.emoji-style{
+  display: flex;
+}
+
+.emojis-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 47%;
+}
+
+.emojiButton{
+  width: 10vh;
+  padding-bottom: 1.5vh;
+}
