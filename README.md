@@ -10,7 +10,7 @@ This project is hosted across three different docker containers:
 
 *  **database:** a PostgreSQL database which is backed up at /var/lib/postgresql
 
-Created by Valentina Guerrero Chala, Evan Lauer, Avery Hall, Catherine Bregou, Mary Blanchard, and Rachel Miller for Carleton College's Advanced Software Design course.
+Created by Valentina Guerrero Chala, Evan Lauer, Avery Hall, Catherine Bregou, Mary Blanchard, and Rachel Miller for Carleton College's Advanced Software Design course, spring 2024.
 
 
 <h2>Setup to Run Locally</h2>
